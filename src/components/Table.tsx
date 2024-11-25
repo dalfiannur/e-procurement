@@ -1,21 +1,11 @@
 import {
   Table as BTable,
   TableTbody,
-  TableTd,
   TableTh,
   TableThead,
   TableTr,
 } from "@mantine/core";
-import _ from "lodash";
-import { ReactNode } from "react";
-
-const getCell = <T,>(row: T, key: string | number | symbol) => _.get(row, key);
-
-type Column<T> = {
-  keyIndex: keyof T;
-  header: () => ReactNode;
-  cell?: (row: T) => ReactNode;
-};
+import { Column, TableRow } from "./TableRow";
 
 export const Table = <T,>({
   columns,
@@ -25,7 +15,12 @@ export const Table = <T,>({
   data: T[];
 }) => {
   return (
-    <BTable striped highlightOnHover>
+    <BTable
+      striped
+      highlightOnHover
+      horizontalSpacing="md"
+      verticalSpacing="md"
+    >
       <TableThead>
         <TableTr>
           {columns.map((column, index) => (
@@ -35,13 +30,7 @@ export const Table = <T,>({
       </TableThead>
       <TableTbody>
         {data.map((row, index) => (
-          <TableTr key={index}>
-            {columns.map((column, cIndex) => (
-              <TableTd key={cIndex}>
-                {column.cell ? column.cell(row) : getCell(row, column.keyIndex)}
-              </TableTd>
-            ))}
-          </TableTr>
+          <TableRow key={index} data={row} columns={columns} />
         ))}
       </TableTbody>
     </BTable>

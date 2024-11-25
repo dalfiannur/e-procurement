@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "supabase start && next dev --turbopack",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "db:start": "supabase start",
     "db:migration": "supabase db diff --use-migra -f init_schema"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "@mantine/hooks": "^7.14.1",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.46.1",
+    "@tabler/icons-react": "^3.22.0",
     "lodash": "^4.17.21",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",

@@ -1,9 +1,9 @@
 import { Button } from "@mantine/core";
 import { logout } from "./action";
-import { createClient } from "~/utils/supabase/server";
+import { createServerDatabase } from "~/utils/supabase/server";
 
 export default async function Page() {
-  const supabase = await createClient()
+  const supabase = await createServerDatabase();
   const { data } = await supabase.from("roles").select();
   return (
     <div>
