@@ -33,10 +33,9 @@ export function LinksGroup({
   const items = (hasLinks ? links : []).map((link) => (
     <Text
       component={Link}
-      className="font-medium block px-4 py-2 text-sm text-[light-dark(var(--mantine-color-gray-7),var(--mantine-color-dark-0))] border-l-[1px_solid_light-dark(var(--mantine-color-gray-3),var(--mantine-color-dark-4))] hover:bg-[light-dark(var(--mantine-color-gray-0),var(--mantine-color-dark-7))] hover:text-[light-dark(var(--mantine-color-black),var(--mantine-color-dark-0))]"
+      className="font-medium block px-4 py-2 text-sm text-[light-dark(var(--mantine-color-gray-7),var(--mantine-color-dark-0))] border-l-[1px_solid_light-dark(var(--mantine-color-gray-3),var(--mantine-color-dark-4))] hover:bg-[light-dark(var(--mantine-color-gray-0),var(--mantine-color-dark-7))] hover:text-[light-dark(var(--mantine-color-black),var(--mantine-color-dark-0))] border-l !border-blue-200 ml-8 pl-8"
       href={link.link}
       key={link.label}
-      onClick={(event) => event.preventDefault()}
     >
       {link.label}
     </Text>

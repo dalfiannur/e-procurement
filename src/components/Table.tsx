@@ -22,9 +22,11 @@ export const Table = <T,>({
       verticalSpacing="md"
     >
       <TableThead>
-        <TableTr>
+        <TableTr bg="gray.1">
           {columns.map((column, index) => (
-            <TableTh key={index}>{column.header()}</TableTh>
+            <TableTh key={index} c="gray.6" fz={14} fw={700}>
+              {column.header()}
+            </TableTh>
           ))}
         </TableTr>
       </TableThead>

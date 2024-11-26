@@ -4,7 +4,7 @@ import _ from "lodash";
 import { ReactNode, useState } from "react";
 
 export type Column<T> = {
-  keyIndex: keyof T;
+  keyIndex: string | number | symbol;
   header: () => ReactNode;
   cell?: (
     row: T,

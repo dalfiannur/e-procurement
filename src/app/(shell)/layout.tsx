@@ -16,14 +16,14 @@ export default function Layout({ children }: { children: ReactNode }) {
     <AppShell
       layout="alt"
       header={{ height: 60 }}
-      navbar={{ width: 300, breakpoint: "md", collapsed: { mobile: !opened } }}
-      p="md"
+      navbar={{ width: 300, breakpoint: "xl", collapsed: { mobile: !opened } }}
+      p="xl"
     >
       <AppShellHeader>
         <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
         Logo
       </AppShellHeader>
-      <AppShellNavbar p="md">
+      <AppShellNavbar p="xl">
         <NavbarLinksGroup />
       </AppShellNavbar>
       <AppShellMain>{children}</AppShellMain>
